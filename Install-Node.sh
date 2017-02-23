@@ -1,10 +1,11 @@
 #!/bin/bash
 # written by Richard Stanley;
-PICHIP=$(uname -m);
-if [ "$EUID" -ne 0 ]
-        then echo "You need to install as root by using sudo ./Install-Node.sh";
-        exit
-else LINKTONODE=$(wget https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.xz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
+#PICHIP=$(uname -m);
+#if [ "$EUID" -ne 0 ]
+#        then echo "You need to install as root by using sudo ./Install-Node.sh";
+#        exit
+#else LINKTONODE=$(wget https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-'$PICHIP'\.tar\.xz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//');
+LINKTONODE='node-v7.6.0-linux-armv7l.tar.xz';
 # curl -G https://nodejs.org/dist/latest-v7.x/ | awk '{print $2}' | grep -P 'href=\"node-v7\.\d{1,}\.\d{1,}-linux-armv7l\.tar\.xz' | sed 's/href="//' | sed 's/<\/a>//' | sed 's/">.*//'
 NODEFOLDER=$(echo $LINKTONODE | sed 's/.tar.xz/\//');
 #Shell script created by @audstanley
